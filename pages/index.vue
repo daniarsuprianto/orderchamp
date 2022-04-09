@@ -19,6 +19,8 @@
               >{{ store.name }}</NuxtLink
             >
           </div>
+
+          <SaveAsFavorite :favorite="favorite" @click="toggleFavorite" />
         </div>
     </div>
 
@@ -59,6 +61,9 @@ export default {
       } catch (error) {
         console.error(error)
       }
+    },
+    toggleFavorite() {
+      this.favorite = !this.favorite
     },
   },
 }
