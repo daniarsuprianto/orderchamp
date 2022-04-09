@@ -6,7 +6,26 @@
         :images="listing.images.edges"
         class="mb-4"
       />
+
+      <div class="px-4">
+        <div class="flex justify-between items-start">
+          <div>
+            <h1 class="font-semibold text-xl">
+              {{ listing.translation.title }}
+            </h1>
+            <NuxtLink
+              :to="`/store/${store.slug}`"
+              class="underline text-xs text-gray-400"
+              >{{ store.name }}</NuxtLink
+            >
+          </div>
+        </div>
     </div>
+
+    <section class="px-4 mt-6">
+      <h2 class="font-semibold mb-2">Information</h2>
+      <p class="whitespace-pre-line">{{ listing.translation.description }}</p>
+    </section>
   </div>
 </template>
 
