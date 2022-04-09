@@ -1,7 +1,7 @@
 <!-- Could have used library such as Swiper, but that's for improvement -->
 <template>
   <div>
-    <div class="p-2 border-b border-gray-200 pb-2">
+    <div class="p-2 md:w-2/3 mx-auto">
       <div class="relative overflow-hidden pb-full">
         <img
           :src="images[activeIndex].node.small"
@@ -13,7 +13,7 @@
 
     <ul
       v-if="images.length > 1"
-      class="flex overflow-auto gap-2 py-2 px-4 border-b border-gray-200"
+      class="flex md:justify-center overflow-auto gap-2 py-2 px-4 border-b border-t border-gray-200"
     >
       <li
         v-for="(image, index) in images"

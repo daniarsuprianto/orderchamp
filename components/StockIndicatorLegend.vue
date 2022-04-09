@@ -1,5 +1,5 @@
 <template>
-  <ul class="flex gap-3">
+  <ul class="flex gap-3 text-sm">
     <li class="inline-flex items-center gap-2">
       <StockIndicator availability="available" /> Available
     </li>

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-1">
+  <div class="inline-flex gap-2">
     <UiButton variant="tertiary" :disabled="quantity <= 0" @click="decrease">
       <MinusIcon class="w-4 h-4" />
     </UiButton>
@@ -8,10 +8,7 @@
       <UiInput
         v-model="quantity"
         class="text-center"
-        type="number"
         :invalid="invalid"
-        min="0"
-        :max="max"
         @focus="onFocus"
         @blur="onBlur"
       />

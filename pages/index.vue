@@ -1,13 +1,16 @@
 <template>
-  <div v-if="!$fetchState.pending" class="container pb-12">
-    <div class="md:flex">
+  <div
+    v-if="!$fetchState.pending"
+    class="container max-w-screen-lg mx-auto py-8"
+  >
+    <div class="lg:flex gap-6">
       <ListingGallery
         v-if="listing.images.edges.length"
         :images="listing.images.edges"
-        class="mb-4"
+        class="mb-4 lg:w-3/5"
       />
 
-      <div class="px-4">
+      <div class="px-4 lg:px-0 flex-grow">
         <div class="flex justify-between items-start">
           <ListingTitle :name="listing.translation.title" :store="store" />
 
@@ -18,11 +21,11 @@
       </div>
     </div>
 
-    <section class="px-4 mt-4">
-      <h2 class="text-lg font-semibold mb-2 border-t border-gray-200 pt-2">
-        Information
-      </h2>
-      <p class="whitespace-pre-line">{{ listing.translation.description }}</p>
+    <section class="px-4 mt-4 lg:px-0 border-t border-gray-200 pt-2">
+      <div class="lg:w-3/5">
+        <h2 class="text-lg font-semibold mb-2">Information</h2>
+        <p class="whitespace-pre-line">{{ listing.translation.description }}</p>
+      </div>
     </section>
   </div>
 </template>

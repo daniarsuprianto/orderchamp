@@ -1,7 +1,7 @@
 <template>
   <!-- Using old school table instead of fancy flex or grid. Why? Because it's a table, semantically also table. Keep it simple :) -->
   <div>
-    <table>
+    <table class="w-full">
       <thead class="border-b border-gray-200">
         <th class="py-2 font-semibold">Quantity</th>
         <th class="py-2 font-semibold">Variant</th>
@@ -15,7 +15,7 @@
           :key="variant.node.id"
           class="border-b border-gray-200"
         >
-          <td class="py-2">
+          <td class="py-2 text-center md:w-28">
             <VariantQuantity
               :max="variant.node.inventory"
               @change="
@@ -27,8 +27,8 @@
             />
           </td>
           <td class="px-2">{{ variant.node.options[0].value }}</td>
-          <td class="px-2">€{{ variant.node.price }}</td>
-          <td class="px-2">€{{ variant.node.msrp }}</td>
+          <td class="px-2 text-center">€{{ variant.node.price }}</td>
+          <td class="px-2 text-center">€{{ variant.node.msrp }}</td>
           <td class="text-center">
             <StockIndicator
               :availability="getAvailability(variant.node.inventory)"
