@@ -1,11 +1,13 @@
 <template>
   <Component
     :is="element"
-    class="inline-flex px-4 py-2 justify-center rounded h-11 items-center"
+    class="inline-flex py-2 justify-center rounded h-11 items-center"
     :class="{
-      'bg-green-700 text-white': variant === 'primary',
+      'bg-green text-white': variant === 'primary',
       'bg-gray-800 text-white': variant === 'secondary',
       'border-gray-800': variant === 'secondary-alt',
+      'px-4': variant !== 'tertiary',
+      'text-gray-400': $attrs.disabled,
     }"
     v-on="$listeners"
     ><slot

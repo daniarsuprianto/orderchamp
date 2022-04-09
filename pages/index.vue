@@ -22,6 +22,9 @@
 
           <SaveAsFavorite :favorite="favorite" @click="toggleFavorite" />
         </div>
+
+        <AddToCart :listing="listing" />
+
     </div>
 
     <section class="px-4 mt-6">
@@ -41,8 +44,8 @@ export default {
       favorite: false,
     }
   },
-  fetch() {
-    this.fetchObjectData()
+  async fetch() {
+    await this.fetchObjectData()
   },
   methods: {
     async fetchObjectData() {
