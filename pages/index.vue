@@ -9,26 +9,19 @@
 
       <div class="px-4">
         <div class="flex justify-between items-start">
-          <div>
-            <h1 class="font-semibold text-xl">
-              {{ listing.translation.title }}
-            </h1>
-            <NuxtLink
-              :to="`/store/${store.slug}`"
-              class="underline text-xs text-gray-400"
-              >{{ store.name }}</NuxtLink
-            >
-          </div>
+          <ListingTitle :name="listing.translation.title" :store="store" />
 
           <SaveAsFavorite :favorite="favorite" @click="toggleFavorite" />
         </div>
 
         <AddToCart :listing="listing" />
-
+      </div>
     </div>
 
-    <section class="px-4 mt-6">
-      <h2 class="font-semibold mb-2">Information</h2>
+    <section class="px-4 mt-4">
+      <h2 class="text-lg font-semibold mb-2 border-t border-gray-200 pt-2">
+        Information
+      </h2>
       <p class="whitespace-pre-line">{{ listing.translation.description }}</p>
     </section>
   </div>

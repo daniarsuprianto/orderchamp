@@ -15,7 +15,7 @@
           :key="variant.node.id"
           class="border-b border-gray-200"
         >
-          <td class="py-1">
+          <td class="py-2">
             <VariantQuantity
               :max="variant.node.inventory"
               @change="

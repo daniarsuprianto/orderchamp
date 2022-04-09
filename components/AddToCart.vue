@@ -12,11 +12,22 @@
     >
 
     <StoreOrderHighlights :listing="listing" />
+
+    <UiButton
+      href="mailto:brand@orderchamp.com"
+      variant="tertiary"
+      class="w-full text-center text-sm"
+    >
+      <EnvelopeIcon class="w-4 h-4 mr-2" /> Contact the brand
+    </UiButton>
   </div>
 </template>
 
 <script>
+import EnvelopeIcon from '@/assets/icons/envelope.svg'
+
 export default {
+  components: { EnvelopeIcon },
   props: { listing: { type: Object, required: true } },
   data() {
     return {
